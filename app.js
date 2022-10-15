@@ -23,9 +23,12 @@ const fetchThoughts = () => {
       data.data.forEach((thought) => {
         thoughtsSection.innerHTML += `
             <div class="added__thought">
-            <img>
+            <img class="close" src="./assets/close.png" title="close" alt="close">
             <p class="added__thought-text">${thought.message}</p>
+            <div class="likes">
             <div class="heart">❤️</div>
+            <p class="number-of-likes">x ${thought.hearts}</p>
+            </div>
             </div>
             `;
       });

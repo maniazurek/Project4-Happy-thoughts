@@ -121,6 +121,7 @@ body.darktheme .ball {
 }
 
 .added__thought {
+  position: relative;
   margin-bottom: 50px;
   box-sizing: border-box;
   border: 2px solid #000000;
@@ -144,12 +145,36 @@ body.darktheme .ball {
   height: 90px;
 }
 
+.likes {
+  display: flex;
+}
+
 .heart {
-    background-color: #EAEAEA;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: #eaeaea;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.number-of-likes {
+  margin-left: 15px;
+  font-family: "Kadwa";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  color: #666666;
+}
+
+.close {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
