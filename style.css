@@ -1,0 +1,155 @@
+body {
+  margin: 0;
+  background-color: #fff;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.theme-switch {
+  width: 345px;
+  display: flex;
+  justify-content: end;
+}
+
+body.darktheme {
+  background-color: #1e1e1e;
+}
+
+.label {
+  margin-top: 20px;
+  background-color: #24272c;
+  display: flex;
+  border-radius: 18px;
+  height: 40px;
+  width: 84px;
+  position: relative;
+}
+
+body.darktheme .label {
+  background-color: #eaeaea;
+}
+
+.ball {
+  width: 30px;
+  height: 30px;
+  background-color: #e9eaf0;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+body.darktheme .ball {
+  background-color: #1e1e1e;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox:checked + .label .ball {
+  transform: translateX(-44px);
+}
+
+.happythought-question__container {
+  margin-top: 17px;
+  display: flex;
+  justify-content: center;
+}
+
+.question__container {
+  width: 305px;
+  background-color: #eaeaea;
+  border: 2px solid #000000;
+  padding: 0 18px;
+  box-shadow: 10px 10px 0px 0px rgba(6, 6, 6, 1);
+}
+
+.question__container-what {
+  font-family: "Kadwa";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.question__container-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.question__container-input {
+  box-sizing: border-box;
+  display: flex;
+  margin-top: 20px;
+  height: 100px;
+  width: 305px;
+  padding: 12px;
+  background: #ffffff;
+  border: 2px solid #999999;
+  font-family: "Kadwa";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.question__container-button {
+  font-family: "Kadwa";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 40px;
+  margin-top: 20px;
+  margin-bottom: 32px;
+  background-color: #ffadad;
+  border: 2px solid #ff6161;
+  border-radius: 35px;
+  padding: 18px 20.39px;
+}
+
+.thoughts__container {
+  margin-top: 67px;
+}
+
+.added__thought {
+  margin-bottom: 50px;
+  box-sizing: border-box;
+  border: 2px solid #000000;
+  width: 345px;
+  height: 199px;
+  background-color: #fff;
+  padding: 20px 18px;
+  box-shadow: 10px 10px 0px 0px rgba(6, 6, 6, 1);
+}
+
+.added__thought-text {
+  margin: 0;
+  font-family: "Kadwa";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  display: flex;
+  color: #000000;
+  width: 277px;
+  height: 90px;
+}
+
+.heart {
+    background-color: #EAEAEA;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

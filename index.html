@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Thoughts</title>
+    <link href="./style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body class="body">
+      <div class="theme-switch">
+        <input class="checkbox" type="checkbox" id="checkbox" />
+        <label for="checkbox" class="label">
+          <i class="light"></i>
+          <i class="dark"></i>
+          <div class="ball"></div>
+        </label>
+      </div>
+      <section class="happythought-question__container">
+        <div class="question__container">
+          <h2 class="question__container-what">
+            What’s making you happy right now?
+          </h2>
+          <form class="question__container-form">
+            <input class="question__container-input" type="text" />
+            <button class="question__container-button" type="submit">
+              ❤️ Send happy thought ❤️
+            </button>
+          </form>
+        </div>
+      </section>
+      <div class="error"></div>
+      <section class="thoughts__container"></section>
+  </body>
+  <script src="./app.js"></script>
+</html>
