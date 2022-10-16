@@ -1,4 +1,4 @@
-const main = document.querySelector(".happy")
+const main = document.querySelector(".happy");
 const checkbox = document.querySelector(".checkbox");
 const thoughtsSection = document.querySelector(".thoughts__container");
 const newThought = document.querySelector(".question__container-form");
@@ -28,9 +28,9 @@ const fetchThoughts = () => {
             }" src="./assets/close.png" title="close" alt="close">
             <p class="added__thought-text">${thought.message}</p>
             <div class="likes">
-            <div class="heart ${thought.hearts > 0 && "heart-liked"}" data-id="${
-          thought._id
-        }">❤️</div>
+            <div class="heart ${
+              thought.hearts > 0 && "heart-liked"
+            }" data-id="${thought._id}">❤️</div>
             <p class="number-of-likes">x ${thought.hearts}</p>
             </div>
             </div>
@@ -79,10 +79,10 @@ newThought.addEventListener("submit", (event) => {
     };
     fetch(`${URL}/thoughts`, options)
       .then(() => fetchThoughts())
-      .catch((err) => (error.innerText = "Something went wrong"))
-      error.classList.remove("visible");
-      error.classList.remove("visible");
+      .catch((err) => (error.innerText = "Something went wrong"));
+    error.classList.remove("visible");
+    error.classList.remove("visible");
   } else {
     error.classList.add("visible");
-  } 
+  }
 });

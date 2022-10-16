@@ -1,5 +1,5 @@
 body {
-  margin: 0 0 100px 0;
+  margin: 0;
 }
 
 .container {
@@ -40,6 +40,7 @@ main.darktheme .label {
   right: 5px;
   border-radius: 50%;
   transition: transform 0.2s linear;
+  cursor: pointer;
 }
 
 main.darktheme .ball {
@@ -107,6 +108,7 @@ main.darktheme .theme-switch-heart {
   font-size: 16px;
   line-height: 20px;
   color: #000000;
+  outline: none;
 }
 
 .error {
@@ -132,10 +134,13 @@ main.darktheme .theme-switch-heart {
   border: 2px solid #ff6161;
   border-radius: 35px;
   padding: 18px 20.39px;
+  cursor: pointer;
 }
 
 .thoughts__container {
   margin-top: 67px;
+  overflow-wrap: anywhere;
+  padding-bottom: 100px;
 }
 
 .added__thought {
@@ -145,7 +150,7 @@ main.darktheme .theme-switch-heart {
   border: 2px solid #000000;
   height: 199px;
   background-color: #fff;
-  padding: 20px 18px;
+  padding: 20px 50px 20px 18px;
   box-shadow: 10px 10px 0px 0px rgba(6, 6, 6, 1);
   display: flex;
   flex-direction: column;
@@ -176,6 +181,7 @@ main.darktheme .theme-switch-heart {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: copy;
 }
 
 .heart-liked {
@@ -200,6 +206,7 @@ main.darktheme .theme-switch-heart {
   position: absolute;
   top: 20px;
   right: 20px;
+  cursor: pointer;
 }
 
 .heart-red {
@@ -237,6 +244,7 @@ main.darktheme .theme-switch-heart {
 
   .thoughts__container {
     margin-top: 100px;
+    padding-bottom: 100px;
   }
 
   .added__thought {
