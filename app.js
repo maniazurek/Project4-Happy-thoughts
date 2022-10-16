@@ -23,28 +23,40 @@ const fetchThoughts = () => {
       data.data.forEach((thought) => {
         thoughtsSection.innerHTML += `
             <div class="added__thought">
-            <img class="close" data-id="${thought._id}" src="./assets/close.png" title="close" alt="close">
+            <img class="close" data-id="${
+              thought._id
+            }" src="./assets/close.png" title="close" alt="close">
             <p class="added__thought-text">${thought.message}</p>
             <div class="likes">
-            <div class="heart">❤️</div>
+            <div class="heart ${thought.hearts > 0 && "heart-red"}" data-id="${
+          thought._id
+        }">❤️</div>
             <p class="number-of-likes">x ${thought.hearts}</p>
             </div>
             </div>
             `;
       });
-      const closeButton = document.querySelectorAll(".close");
-      closeButton.forEach((singleCloseButton) => {
+      const closeButtons = document.querySelectorAll(".close");
+      closeButtons.forEach((singleCloseButton) => {
         singleCloseButton.addEventListener("click", (event) => {
           const options = {
             method: "DELETE",
           };
-          fetch('${URL}/thoughts/${event.target.dataset.id}', options)
-          .then(() => {
-            arrayOfThoughts = arrayOfThoughts.filter((item) => {
-              return item._id !== event.target.dataset.id;
-            });
-          }
+          fetch(`${URL}/thoughts/${event.target.dataset.id}`, options).then(
+            () => fetchThoughts()
           );
+        });
+      });
+      const likeButtons = document.querySelectorAll(".heart");
+      likeButtons.forEach((singleLike) => {
+        singleLike.addEventListener("click", (event) => {
+          const options = {
+            method: "PUT",
+          };
+          fetch(
+            `${URL}/thoughts/like/${event.target.dataset.id}`,
+            options
+          ).then(() => fetchThoughts());
         });
       });
     })
@@ -72,4 +84,3 @@ newThought.addEventListener("submit", (event) => {
     error.innerText = "Please fill in happy thoughts input";
   }
 });
-

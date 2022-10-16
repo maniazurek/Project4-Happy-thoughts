@@ -197,6 +197,10 @@ body.darktheme .theme-switch-heart {
   right: 20px;
 }
 
+.heart-red {
+  background-color: #FFADAD;
+}
+
 @media all and (min-width: 768px) {
   .container {
     width: 738px;
