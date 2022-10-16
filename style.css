@@ -6,10 +6,15 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 15px;
+}
+
+.container {
+  width: 100%;
 }
 
 .theme-switch {
-  width: 345px;
+  width: 100%;
   display: flex;
   justify-content: end;
 }
@@ -47,6 +52,18 @@ body.darktheme .ball {
   background-color: #1e1e1e;
 }
 
+.theme-switch-heart {
+  right: 5px;
+  top: 2px;
+  position: absolute;
+  color: #24272c;
+  font-size: 25px;
+}
+
+body.darktheme .theme-switch-heart {
+  color: #eaeaea;
+}
+
 .checkbox {
   opacity: 0;
   position: absolute;
@@ -63,7 +80,7 @@ body.darktheme .ball {
 }
 
 .question__container {
-  width: 305px;
+  width: 100%;
   background-color: #eaeaea;
   border: 2px solid #000000;
   padding: 0 18px;
@@ -78,6 +95,7 @@ body.darktheme .ball {
   line-height: 24px;
   margin-top: 20px;
   margin-bottom: 0;
+  width: 100%;
 }
 
 .question__container-form {
@@ -90,7 +108,7 @@ body.darktheme .ball {
   display: flex;
   margin-top: 20px;
   height: 100px;
-  width: 305px;
+  width: 100%;
   padding: 12px;
   background: #ffffff;
   border: 2px solid #999999;
@@ -125,7 +143,7 @@ body.darktheme .ball {
   margin-bottom: 50px;
   box-sizing: border-box;
   border: 2px solid #000000;
-  width: 345px;
+  width: 100%;
   height: 199px;
   background-color: #fff;
   padding: 20px 18px;
@@ -141,7 +159,7 @@ body.darktheme .ball {
   line-height: 32px;
   display: flex;
   color: #000000;
-  width: 277px;
+  width: 100%;
   height: 90px;
 }
 
@@ -177,4 +195,10 @@ body.darktheme .ball {
   position: absolute;
   top: 20px;
   right: 20px;
+}
+
+@media all and (min-width: 768px) {
+  .container {
+    width: 738px;
+  }
 }

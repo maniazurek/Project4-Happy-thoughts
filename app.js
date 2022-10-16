@@ -23,7 +23,7 @@ const fetchThoughts = () => {
       data.data.forEach((thought) => {
         thoughtsSection.innerHTML += `
             <div class="added__thought">
-            <img class="close" src="./assets/close.png" title="close" alt="close">
+            <img class="close" data-id="${thought._id}" src="./assets/close.png" title="close" alt="close">
             <p class="added__thought-text">${thought.message}</p>
             <div class="likes">
             <div class="heart">❤️</div>
@@ -32,14 +32,30 @@ const fetchThoughts = () => {
             </div>
             `;
       });
-    });
+      const closeButton = document.querySelectorAll(".close");
+      closeButton.forEach((singleCloseButton) => {
+        singleCloseButton.addEventListener("click", (event) => {
+          const options = {
+            method: "DELETE",
+          };
+          fetch('${URL}/thoughts/${event.target.dataset.id}', options)
+          .then(() => {
+            arrayOfThoughts = arrayOfThoughts.filter((item) => {
+              return item._id !== event.target.dataset.id;
+            });
+          }
+          );
+        });
+      });
+    })
+    .catch((err) => console.log(err));
 };
 
 fetchThoughts();
 
 newThought.addEventListener("submit", (event) => {
   event.preventDefault();
-  if (newThoughtText) {
+  if (newThoughtText.value) {
     const options = {
       method: "POST",
       headers: {
@@ -56,3 +72,4 @@ newThought.addEventListener("submit", (event) => {
     error.innerText = "Please fill in happy thoughts input";
   }
 });
+
