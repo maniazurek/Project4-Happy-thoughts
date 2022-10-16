@@ -81,7 +81,6 @@ newThought.addEventListener("submit", (event) => {
       .then(() => fetchThoughts())
       .catch((err) => (error.innerText = "Something went wrong"));
     error.classList.remove("visible");
-    error.classList.remove("visible");
   } else {
     error.classList.add("visible");
   }
