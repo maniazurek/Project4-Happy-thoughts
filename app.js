@@ -1,4 +1,4 @@
-const body = document.querySelector(".body");
+const main = document.querySelector(".happy")
 const checkbox = document.querySelector(".checkbox");
 const thoughtsSection = document.querySelector(".thoughts__container");
 const newThought = document.querySelector(".question__container-form");
@@ -9,7 +9,7 @@ const error = document.querySelector(".error");
 const URL = "http://happy-thoughts-api-sprint-4.herokuapp.com";
 
 checkbox.addEventListener("click", () => {
-  body.classList.toggle("darktheme");
+  main.classList.toggle("darktheme");
 });
 
 let arrayOfThoughts = [];
@@ -28,7 +28,7 @@ const fetchThoughts = () => {
             }" src="./assets/close.png" title="close" alt="close">
             <p class="added__thought-text">${thought.message}</p>
             <div class="likes">
-            <div class="heart ${thought.hearts > 0 && "heart-red"}" data-id="${
+            <div class="heart ${thought.hearts > 0 && "heart-liked"}" data-id="${
           thought._id
         }">❤️</div>
             <p class="number-of-likes">x ${thought.hearts}</p>
@@ -67,7 +67,7 @@ fetchThoughts();
 
 newThought.addEventListener("submit", (event) => {
   event.preventDefault();
-  if (newThoughtText.value) {
+  if (newThoughtText.value.length > 3) {
     const options = {
       method: "POST",
       headers: {
@@ -79,8 +79,10 @@ newThought.addEventListener("submit", (event) => {
     };
     fetch(`${URL}/thoughts`, options)
       .then(() => fetchThoughts())
-      .catch((err) => (error.innerText = "Something went wrong"));
+      .catch((err) => (error.innerText = "Something went wrong"))
+      error.classList.remove("visible");
+      error.classList.remove("visible");
   } else {
-    error.innerText = "Please fill in happy thoughts input";
-  }
+    error.classList.add("visible");
+  } 
 });

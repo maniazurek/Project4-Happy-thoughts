@@ -1,25 +1,19 @@
 body {
   margin: 0;
-  background-color: #fff;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 15px;
 }
 
 .container {
   width: 100%;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 
 .theme-switch {
-  width: 100%;
   display: flex;
   justify-content: end;
 }
 
-body.darktheme {
+main.darktheme {
   background-color: #1e1e1e;
 }
 
@@ -33,7 +27,7 @@ body.darktheme {
   position: relative;
 }
 
-body.darktheme .label {
+main.darktheme .label {
   background-color: #eaeaea;
 }
 
@@ -48,7 +42,7 @@ body.darktheme .label {
   transition: transform 0.2s linear;
 }
 
-body.darktheme .ball {
+main.darktheme .ball {
   background-color: #1e1e1e;
 }
 
@@ -60,7 +54,7 @@ body.darktheme .ball {
   font-size: 25px;
 }
 
-body.darktheme .theme-switch-heart {
+main.darktheme .theme-switch-heart {
   color: #eaeaea;
 }
 
@@ -75,12 +69,9 @@ body.darktheme .theme-switch-heart {
 
 .happythought-question__container {
   margin-top: 17px;
-  display: flex;
-  justify-content: center;
 }
 
 .question__container {
-  width: 100%;
   background-color: #eaeaea;
   border: 2px solid #000000;
   padding: 0 18px;
@@ -95,7 +86,6 @@ body.darktheme .theme-switch-heart {
   line-height: 24px;
   margin-top: 20px;
   margin-bottom: 0;
-  width: 100%;
 }
 
 .question__container-form {
@@ -108,7 +98,6 @@ body.darktheme .theme-switch-heart {
   display: flex;
   margin-top: 20px;
   height: 100px;
-  width: 100%;
   padding: 12px;
   background: #ffffff;
   border: 2px solid #999999;
@@ -118,6 +107,17 @@ body.darktheme .theme-switch-heart {
   font-size: 16px;
   line-height: 20px;
   color: #000000;
+}
+
+.error {
+  color: #ff6161;
+  font-family: "Kadwa";
+  font-size: 10px;
+  display: none;
+}
+
+.visible {
+  display: inline;
 }
 
 .question__container-button {
@@ -143,11 +143,13 @@ body.darktheme .theme-switch-heart {
   margin-bottom: 50px;
   box-sizing: border-box;
   border: 2px solid #000000;
-  width: 100%;
   height: 199px;
   background-color: #fff;
   padding: 20px 18px;
   box-shadow: 10px 10px 0px 0px rgba(6, 6, 6, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .added__thought-text {
@@ -159,7 +161,6 @@ body.darktheme .theme-switch-heart {
   line-height: 32px;
   display: flex;
   color: #000000;
-  width: 100%;
   height: 90px;
 }
 
@@ -175,6 +176,10 @@ body.darktheme .theme-switch-heart {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.heart-liked {
+  background-color: #ffadad;
 }
 
 .number-of-likes {
@@ -198,11 +203,52 @@ body.darktheme .theme-switch-heart {
 }
 
 .heart-red {
-  background-color: #FFADAD;
+  background-color: #ffadad;
 }
 
 @media all and (min-width: 768px) {
   .container {
-    width: 738px;
+    width: 696px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .happythought-question__container {
+    margin-top: 17px;
+  }
+
+  .question__container {
+    padding: 0 37px;
+  }
+
+  .question__container-what {
+    font-size: 24px;
+    line-height: 48px;
+  }
+
+  .question__container-input {
+    line-height: 32px;
+    margin-top: 8px;
+  }
+
+  .question__container-button {
+    margin: 20px 0;
+  }
+
+  .thoughts__container {
+    margin-top: 100px;
+  }
+
+  .added__thought {
+    padding: 20px 37px;
+  }
+
+  .added__thought-text {
+    line-height: 35px;
+  }
+
+  .close {
+    width: 15px;
+    height: 15px;
   }
 }

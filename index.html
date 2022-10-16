@@ -12,8 +12,9 @@
       href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap"
       rel="stylesheet" />
   </head>
-  <body class="body">
-      <div class="theme-switch">
+  <body>
+    <main class="happy">
+      <div class="theme-switch container">
         <input class="checkbox" type="checkbox" id="checkbox" />
         <label for="checkbox" class="label">
           <i class="light"></i>
@@ -30,14 +31,15 @@
           </h2>
           <form class="question__container-form">
             <input class="question__container-input" type="text"/>
+            <div class="error">*Input should have min. 4 signs and maks. 66 signs.</div>
             <button class="question__container-button" type="submit">
               ❤️ Send happy thought ❤️
             </button>
           </form>
         </div>
       </section>
-      <div class="error"></div>
       <section class="thoughts__container container"></section>
-  </body>
+    </main>
+    </body>
   <script src="./app.js"></script>
 </html>
