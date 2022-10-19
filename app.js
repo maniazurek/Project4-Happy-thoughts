@@ -39,24 +39,13 @@ const fetchThoughts = () => {
       const closeButtons = document.querySelectorAll(".close");
       closeButtons.forEach((singleCloseButton) => {
         singleCloseButton.addEventListener("click", (event) => {
-          const options = {
-            method: "DELETE",
-          };
-          fetch(`${URL}/thoughts/${event.target.dataset.id}`, options).then(
-            () => fetchThoughts()
-          );
+          deleteHappyThought();
         });
       });
       const likeButtons = document.querySelectorAll(".heart");
       likeButtons.forEach((singleLike) => {
         singleLike.addEventListener("click", (event) => {
-          const options = {
-            method: "PUT",
-          };
-          fetch(
-            `${URL}/thoughts/like/${event.target.dataset.id}`,
-            options
-          ).then(() => fetchThoughts());
+          likeHappyThought();
         });
       });
     })
@@ -65,23 +54,46 @@ const fetchThoughts = () => {
 
 fetchThoughts();
 
+const addHappyThought = () => {
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      message: newThoughtText.value,
+    }),
+  };
+  fetch(`${URL}/thoughts`, options)
+    .then(() => fetchThoughts())
+    .catch((err) => (error.innerText = "Something went wrong"));
+  error.classList.remove("visible");
+  newThoughtText.value = "";
+};
+
 newThought.addEventListener("submit", (event) => {
   event.preventDefault();
   if (newThoughtText.value.length > 3) {
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        message: newThoughtText.value,
-      }),
-    };
-    fetch(`${URL}/thoughts`, options)
-      .then(() => fetchThoughts())
-      .catch((err) => (error.innerText = "Something went wrong"));
-    error.classList.remove("visible");
+    addHappyThought();
   } else {
     error.classList.add("visible");
   }
 });
+
+const likeHappyThought = () => {
+  const options = {
+    method: "PUT",
+  };
+  fetch(`${URL}/thoughts/like/${event.target.dataset.id}`, options).then(() =>
+    fetchThoughts()
+  );
+};
+
+const deleteHappyThought = () => {
+  const options = {
+    method: "DELETE",
+  };
+  fetch(`${URL}/thoughts/${event.target.dataset.id}`, options).then(() =>
+    fetchThoughts()
+  );
+};

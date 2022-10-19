@@ -112,14 +112,13 @@ main.darktheme .theme-switch-heart {
 }
 
 .error {
-  color: #ff6161;
+  color: #eaeaea;
   font-family: "Kadwa";
   font-size: 10px;
-  display: none;
 }
 
 .visible {
-  display: inline;
+  color: #ff6161;
 }
 
 .question__container-button {
