@@ -6,7 +6,7 @@ const newThoughtText = document.querySelector(".question__container-input");
 const button = document.querySelector(".question__container-button");
 const error = document.querySelector(".error");
 
-const URL = "http://happy-thoughts-api-sprint-4.herokuapp.com";
+const URL = "https://happy-thoughts-api.fly.dev";
 
 checkbox.addEventListener("click", () => {
   main.classList.toggle("darktheme");
